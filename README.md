@@ -1,7 +1,7 @@
 
 # Selenium Plugin
 
-The Selenium plugin is designed to be able to start/stop the Selenium Server from within Clarive. Selenium Server should be on a Unix machine.
+The Selenium plugin is designed to be able to start/stop the Selenium Server from within Clarive. Selenium Server should be on a Unix-Linux machine.
 
 ## What is Selenium
 
