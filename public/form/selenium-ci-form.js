@@ -30,27 +30,26 @@
         value: data.timeout || 1800,
     });
 
-    var frameBufferCheckbox = new Baseliner.CBox({
+    var frameBufferCheckbox = Cla.ui.checkBox({
         fieldLabel: _('Enabled'),
         name: 'frameBufferEnabled',
-        value: data.frameBufferEnabled == 1 ? true : false,
-        listeners: {
-            check: function(field, checked) {
-                if (checked) {
-                    frameBufferCommandTextField.enable();
-                } else {
-                    frameBufferCommandTextField.disable();
-                }
-            }
+        checked: data.frameBufferEnabled == 1 ? true : false
+    });
+    frameBufferCheckbox.on('check', function() {
+        var checked = frameBufferCheckbox.checked;
+        if (checked) {
+            frameBufferCommandTextField.show();
+        } else {
+            frameBufferCommandTextField.hide();
         }
     });
 
-    var frameBufferCommandTextField = new Ext.form.TextField({
+    var frameBufferCommandTextField = Cla.ui.textField({
         fieldLabel: _('Command'),
         name: 'frameBufferCommand',
         value: data.frameBufferCommand || 'export DISPLAY=:10;Xvfb :10 -ac',
         anchor: '50%',
-        disabled: frameBufferCheckbox.checked ? false : true
+        hidden: frameBufferCheckbox.checked ? false : true
     });
 
     return [
