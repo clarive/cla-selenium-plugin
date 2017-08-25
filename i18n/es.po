@@ -1,0 +1,79 @@
+#: init/selenium-service.js
+msgid "Start Selenium Server"
+msgstr "Iniciar el servidor de Selenium"
+
+#: init/selenium-service.js
+msgid "CI Server not found"
+msgstr "Servidor CI no encontrado"
+
+#: init/selenium-service.js
+msgid "Selenium Server not declared"
+msgstr "Servidor de Selenium no declarado"
+
+#: init/selenium-service.js
+msgid "Starting Selenium Server "
+msgstr "Iniciando el servidor de Selenium"
+
+#: init/selenium-service.js
+msgid "Command to start Selenium Server "
+msgstr "Comando para Iniciar el servidor de Selenium"
+
+#: init/selenium-service.js
+msgid "Selenium Server is up and running"
+msgstr "El servidor de Selenium esta levantado"
+
+#: init/selenium-service.js
+msgid "Error starting Selenium Server"
+msgstr "Error al iniciar Selenium Server"
+
+#: init/selenium-service.js
+msgid "Stop Selenium Server"
+msgstr "Parar el servidor de Selenium"
+
+#: init/selenium-service.js
+msgid "Selenium Server with mid "
+msgstr "El servidor de Selenium con mid "
+
+#: init/selenium-service.js
+msgid " stopped successful"
+msgstr " parado correctamente"
+
+#: init/selenium-service.js
+msgid " stopping failed"
+msgstr " fallo al parar"
+
+#: init/selenium-service.js
+msgid " not found"
+msgstr " no encontrado"
+
+#: public/form/selenium-ci-form.js
+msgid "Server"
+msgstr "Servidor"
+
+#: public/form/selenium-ci-form.js
+msgid "Path"
+msgstr "Ruta"
+
+#: public/form/selenium-ci-form.js
+msgid "Port"
+msgstr "Puerto"
+
+#: public/form/selenium-ci-form.js
+msgid "Session timeout"
+msgstr "Timeout de la session"
+
+#: public/form/selenium-ci-form.js
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: public/form/selenium-ci-form.js
+msgid "Command"
+msgstr "Commando"
+
+#: public/form/selenium-ci-form.js
+msgid "X-FrameBuffer"
+msgstr "X-FrameBuffer"
+
+#: public/form/selenium-server.js
+msgid "Selenium Server"
+msgstr "Servidor de Selenium"

@@ -1,6 +1,6 @@
 var reg = require("cla/reg");
 reg.register('service.selenium.start', {
-    name: 'Start Selenium Server',
+    name: _('Start Selenium Server'),
     icon: '/plugin/cla-selenium-plugin/icon/selenium.svg',
     form: '/plugin/cla-selenium-plugin/form/selenium-server.js',
     handler: function(ctx, params) {
@@ -15,12 +15,10 @@ reg.register('service.selenium.start', {
         var seleniumPath = ciSelenium.path;
 
         if (!ciSelenium.server) {
-            log.error("CI Server not found");
-            throw new Error('CI Server not found');
+            log.error(_("CI Server not found"));
         }
         if (!seleniumPath) {
-            log.error("Selenium Server not declared");
-            throw new Error('Selenium Server not declared');
+            log.error(_("Selenium Server not declared"));
         }
 
         var server = ci.load(ciSelenium.server);
@@ -29,17 +27,16 @@ reg.register('service.selenium.start', {
         var fileSeleniumPid = remoteTemp + '/selenium-server-' + seleniumServer + '.pid';
 
         var command = buildCommand(ciSelenium);
-        log.info("Starting Selenium Server " + seleniumServer);
-        log.debug("Command to start Selenium Server " + seleniumServer, command);
+        log.info(_("Starting Selenium Server ") + seleniumServer);
+        log.debug(_("Command to start Selenium Server ") + seleniumServer, command);
 
         agent.execute(command);
 
         var pid = getPid(agent, fileSeleniumPid);
         if (pid) {
-            log.info("Selenium Server is up and running");
+            log.info(_("Selenium Server is up and running"));
         } else {
-            log.error("Error starting Selenium Server");
-            throw new Error('Error starting Selenium Server');
+            log.error(_("Error starting Selenium Server"));
         }
 
         function buildCommand(ciSelenium) {
@@ -75,7 +72,7 @@ reg.register('service.selenium.start', {
 });
 
 reg.register('service.selenium.stop', {
-    name: 'Stop Selenium Server',
+    name: _('Stop Selenium Server'),
     icon: '/plugin/cla-selenium-plugin/icon/selenium.svg',
     form: '/plugin/cla-selenium-plugin/form/selenium-server.js',
     handler: function(ctx, params) {
@@ -87,13 +84,11 @@ reg.register('service.selenium.stop', {
             mid: seleniumServer + ''
         });
         if (!ciSelenium.server) {
-            log.error("CI Server not found");
-            throw new Error('CI Server not found');
+            log.error(_("CI Server not found"));
         }
         var seleniumPath = ciSelenium.path;
         if (!seleniumPath) {
-            log.error("Selenium Server not declared")
-            throw new Error('Selenium Server not declared');
+            log.error(_("Selenium Server not declared"));
         }
 
         var server = ci.load(ciSelenium.server);
@@ -112,9 +107,9 @@ reg.register('service.selenium.stop', {
         agent.execute('cat selenium.log');
         var logResponse = agent.tuple().ret;
         if (!error) {
-            log.info("Selenium Server with mid " + seleniumServer + " stopped successful", logResponse);
+            log.info(_("Selenium Server with mid ") + seleniumServer + _(" stopped successful"), logResponse);
         } else {
-            log.warn("Selenium Server with mid " + seleniumServer + " stopping failed", logResponse);
+            log.warn(_("Selenium Server with mid ") + seleniumServer + _(" stopping failed"), logResponse);
         }
 
         function getPid(agent, file) {
@@ -122,7 +117,7 @@ reg.register('service.selenium.stop', {
             var response = agent.tuple().ret;
             var rc = agent.tuple().rc;
             if (rc != 0) {
-                log.debug(file + ' not found');
+                log.debug(file + _(' not found'));
                 return;
             }
             var pid = response.match(/\d+/);
