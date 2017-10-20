@@ -1,0 +1,9 @@
+name: Clarive Selenium Plugin
+description: The Selenium plugin is designed to be able to start/stop the Selenium Server from within Clarive. Selenium Server should be on a Unix-Linux machine.
+version: 1.0
+icon: https://github.com/clarive/cla-selenium-plugin/public/icon/selenium.svg
+url: https://github.com/clarive/cla-selenium-plugin
+requires:
+  - clarive_version: 6.8 <= version
+dependencies:
+  - cla-selenium-plugin
