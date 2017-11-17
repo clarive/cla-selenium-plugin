@@ -5,7 +5,7 @@ ci.createRole("Selenium");
 ci.createClass("SeleniumServer", {
     form: '/plugin/cla-selenium-plugin/form/selenium-ci-form.js',
     icon: '/plugin/cla-selenium-plugin/icon/selenium.svg',
-    roles: ["Selenium"],
+    roles: ["Selenium", "ClariveSE"],
     has: {
         server: {
             is: "rw",

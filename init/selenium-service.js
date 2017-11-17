@@ -3,6 +3,17 @@ reg.register('service.selenium.start', {
     name: _('Start Selenium Server'),
     icon: '/plugin/cla-selenium-plugin/icon/selenium.svg',
     form: '/plugin/cla-selenium-plugin/form/selenium-server.js',
+    rulebook: {
+        moniker: 'selenium_start',
+        description: _('Selenium start service'),
+        required: [ 'server'],
+        allow: ['server'],
+        examples: [{
+            selenium_start: {
+                server: 'selenium_resource'
+            }
+        }]
+    },
     handler: function(ctx, params) {
         var log = require('cla/log');
         var ci = require('cla/ci');
@@ -75,6 +86,17 @@ reg.register('service.selenium.stop', {
     name: _('Stop Selenium Server'),
     icon: '/plugin/cla-selenium-plugin/icon/selenium.svg',
     form: '/plugin/cla-selenium-plugin/form/selenium-server.js',
+    rulebook: {
+        moniker: 'selenium_stop',
+        description: _('Selenium stop service'),
+        required: [ 'server'],
+        allow: ['server'],
+        examples: [{
+            selenium_stop: {
+                server: 'selenium_resource'
+            }
+        }]
+    },
     handler: function(ctx, params) {
         var log = require('cla/log');
         var ci = require('cla/ci');
