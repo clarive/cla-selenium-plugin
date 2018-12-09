@@ -1,6 +1,6 @@
 # Selenium Plugin
 
-<img src="https://cdn.rawgit.com/clarive/cla-selenium-plugin/master/public/icon/selenium.svg?sanitize=true" alt="Selenium Plugin" title="Selenium Plugin" width="120" height="120">
+<img src="https://cdn.jsdelivr.net/gh/clarive/cla-selenium-plugin@master/public/icon/selenium.svg?sanitize=true" alt="Selenium Plugin" title="Selenium Plugin" width="120" height="120">
 
 The Selenium plugin is designed to be able to start/stop the Selenium Server from within Clarive. Selenium Server should be on a Unix machine.
 
